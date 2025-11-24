@@ -364,7 +364,7 @@
 /* ======================================================= */
 /* ====== RESPONSIVE DESIGN POUR SMARTPHONES ET PETITS ÉCRANS ====== */
 /* ======================================================= */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1400px) {
     /* --- GLOBAL --- */
     .regle-container {
         width: 95%;

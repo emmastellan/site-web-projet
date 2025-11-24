@@ -704,7 +704,7 @@ body {
 /* ======================================================= */
 /* ====== RESPONSIVE DESIGN POUR SMARTPHONES ET PETITS ÉCRANS ====== */
 /* ======================================================= */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1400px) {
     /* --- GLOBAL --- */
     body {
         font-size: 14px;
