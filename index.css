@@ -24,17 +24,34 @@ body {
     padding: 10px 50px;
     z-index: 1000;
 }
+
 .header .logo {
-    color: #FFD700;
+    color: #ffffff;
     font-size: 28px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-.header .logo:hover { transform: scale(1.1); }
-.header .nav { display: flex; gap: 30px; }
-.header .nav-item { color: #fff; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
-.header .nav-item:hover { color: #FFD700; }
-.header-icons { display: flex; gap: 20px; color: #fff; font-size: 22px; cursor: pointer; }
+
+.header .logo:hover { 
+    transform: scale(1.1); 
+    color: #FFD700; 
+}
+
+.header .nav { 
+    display: flex; gap: 30px; 
+}
+
+.header .nav-item { 
+    color: #fff; font-weight: 600; cursor: pointer; transition: all 0.3s ease; 
+}
+
+.header .nav-item:hover { 
+    color: #FFD700; 
+}
+
+.header-icons { 
+    display: flex; gap: 20px; color: #fff; font-size: 22px; cursor: pointer; 
+}
 
 /* ====== HERO CAROUSEL ====== */
 .hero-carousel {
@@ -56,9 +73,19 @@ body {
     padding-left: 80px;
     animation: slideAnim 20s infinite;
 }
-.hero-content h1 { font-size: 60px; color: #fa4747; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); margin-bottom: 20px; }
-.hero-content p { font-size: 22px; color: #210beb; margin-bottom: 30px; font-weight: bold;}
-.hero-content button {  color: #fa4747; }
+
+.hero-content h1 { 
+    font-size: 60px; color: #fa4747; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); margin-bottom: 20px; 
+}
+
+.hero-content p { 
+    font-size: 22px; color: #210beb; margin-bottom: 30px; font-weight: bold;
+}
+
+.hero-content button {  
+    color: #fa4747; 
+}
+
 .cta-button {
     background-color: #FFD700;
     color: #111;
@@ -68,14 +95,27 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.cta-button:hover { background-color: #ffbf00; transform: scale(1.05); }
+
+.cta-button:hover { 
+    background-color: #ffbf00; transform: scale(1.05); 
+}
 
 /* ====== FEATURED PRODUCTS ====== */
-.featured-products { padding: 50px 50px; background-color: #f8f8f8; }
-.featured-products h2 { font-size: 36px; margin-bottom: 20px; text-align:center;}
+.featured-products { 
+    padding: 50px 50px; background-color: #f8f8f8; 
+}
 
-.products-slider-container { position: relative; width: 100%; overflow: hidden; }
-.products-container { display: flex; gap: 20px; transition: transform 0.5s ease; overflow: visible; position: relative; }
+.featured-products h2 { 
+    font-size: 36px; margin-bottom: 20px; text-align:center;
+}
+
+.products-slider-container { 
+    position: relative; width: 100%; overflow: hidden; 
+}
+
+.products-container { 
+    display: flex; gap: 20px; transition: transform 0.5s ease; overflow: visible; position: relative; 
+}
 
 /* Carte produit */
 .product-card {
@@ -92,7 +132,9 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 350px;
 }
-.product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.2); }
+.product-card:hover { 
+    transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.2); 
+}
 
 /* Image container avec translation verticale */
 .product-image {
@@ -140,8 +182,14 @@ body {
     position: relative;
     z-index: 20;
 }
-.product-info h3 { font-size: 16px; margin-bottom: 2px; }
-.product-info p { font-size: 14px; margin-bottom: 5px; }
+.product-info h3 { 
+    font-size: 16px; margin-bottom: 2px; 
+}
+
+.product-info p { 
+    font-size: 14px; margin-bottom: 5px; 
+}
+
 .view-product-btn {
     background-color: #111;
     color: #FFD700;
@@ -150,9 +198,13 @@ body {
     font-size: 12px;
     border-radius: 5px;
     cursor: pointer;
+    
     transition: all 0.3s ease;
 }
-.view-product-btn:hover { color:#000; background-color: #ffbf00; transform: scale(1.05); }
+
+.view-product-btn:hover { 
+    color:#000; background-color: #ffbf00; transform: scale(1.05); 
+}
 
 /* Boutons slider */
 .slide-btn {
@@ -168,9 +220,18 @@ body {
     z-index: 10;
     border-radius: 50%;
 }
-.slide-btn.left { left: 10px; }
-.slide-btn.right { right: 10px; }
-.slide-btn:hover { background-color: rgba(0,0,0,0.8); }
+
+.slide-btn.left { 
+    left: 10px; 
+}
+
+.slide-btn.right { 
+    right: 10px; 
+}
+
+.slide-btn:hover { 
+    background-color: rgba(0,0,0,0.8); 
+}
 
 /* ====== PROMO BANNER ====== */
 .promo-banner {
@@ -181,6 +242,25 @@ body {
     padding: 15px;
     font-size: 18px;
     animation: promoAnim 2s infinite alternate;
+}
+
+/* ====== VIDEOSECTION ====== */
+.hero-video {
+    display: flex;
+    justify-content: center;  /* centre horizontalement */
+    align-items: center;      /* centre verticalement si nécessaire */
+    width: 98%; /* largeur de la section */
+    height: 500px; /* hauteur de la section, tu peux modifier */
+    overflow: hidden;
+    position: relative;
+    padding: 0 0 30px 30px;
+}
+
+.hero-video-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* la vidéo remplit la section en gardant le ratio */
+    display: block;
 }
 
 /* ====== COLLECTION SECTION ====== */
@@ -245,9 +325,17 @@ body {
 }
 
 /* Variations de hauteur pour rectangles plus grands */
-.collection-item.large { height: 500px; }
-.collection-item.medium { height: 400px; }
-.collection-item.small { height: 350px; }
+.collection-item.large { 
+    height: 500px; 
+}
+
+.collection-item.medium { 
+    height: 400px; 
+}
+
+.collection-item.small { 
+    height: 350px; 
+}
 
 .collection-text {
     position: absolute;
@@ -279,15 +367,10 @@ body {
 .collection-item .collection-text::after {
     transform-origin: right;
 }
+
 .collection-item:hover .collection-text::after {
     transform-origin: left;
 }
-
-
-
-
-
-
 
 /* ====== NOTRE BOUTIQUE ====== */
 .boutique-section {
@@ -439,23 +522,22 @@ body {
     50%, 83% { transform: translateX(-100%); }
     100% { transform: translateX(0); }
 }
+
 @keyframes promoAnim {
     0% { background-color: #ff4d4d; }
     100% { background-color: #ff6666; }
 }
-
 
 /* ======================================================= */
 /* ====== Styles pour le Panier et les Modales de Commande ====== */
 /* ======================================================= */
 
 /* --- 1. Badge du Panier dans le Header --- */
-/* Assurez-vous que l'icône du panier a 'position: relative;' pour que le badge se positionne correctement */
 #cart-count {
     position: absolute;
-    top: -5px; /* Ajustez selon le design de votre header */
-    right: -10px; /* Ajustez selon le design de votre header */
-    background-color: #ff4500; /* Orange/Rouge Vif */
+    top: -5px; 
+    right: -10px; 
+    background-color: #ff4500; 
     color: white;
     border-radius: 50%;
     padding: 2px 6px;
@@ -472,7 +554,7 @@ body {
 
 /* --- 2. Styles Généraux des Modales --- */
 .modal {
-    display: none; /* Masqué par défaut */
+    display: none; 
     position: fixed;
     z-index: 1000; /* Au-dessus de tous les autres éléments */
     left: 0;
@@ -480,15 +562,15 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.7); /* Fond sombre semi-transparent */
-    justify-content: center; /* Centrage horizontal via JS (display: flex) */
-    align-items: center; /* Centrage vertical via JS (display: flex) */
+    background-color: rgba(0,0,0,0.7); 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .modal-content {
     background: #fff;
     border-radius: 10px;
-    width: 1200px;   /* Ici, vous pouvez ajuster votre pourcentage */
+    width: 1200px;   
     min-width: 1200px;
     max-width: 1200px;
     height: 600px;  
@@ -499,8 +581,6 @@ body {
     position: relative;
     padding: 20px;
     box-sizing: border-box;
-    
-    /* SOLUTION : Force le centrage du bloc lui-même */
     margin: auto; 
 }
 
@@ -620,7 +700,6 @@ body {
 }
 
 /* --- 4. Styles des Formulaires de Commande --- */
-
 #delivery-form input,
 #payment-form input,
 #payment-form select {
@@ -679,8 +758,6 @@ body {
     background-color: #e0e0e0;
 }
 
-
-
 #payment-actions {
     display: flex;
     justify-content: space-between; /* Aligne les boutons aux extrémités */
@@ -699,8 +776,6 @@ body {
     margin-top: 20px;
 }
 
-
-
 /* ======================================================= */
 /* ====== RESPONSIVE DESIGN POUR SMARTPHONES ET PETITS ÉCRANS ====== */
 /* ======================================================= */
@@ -717,18 +792,22 @@ body {
         align-items: flex-start;
         gap: 10px;
     }
+
     .header .logo {
         font-size: 22px;
     }
+
     .header .nav {
         flex-direction: column;
         gap: 10px;
         width: 100%;
         align-items: center;
     }
+
     .header .nav-item {
         font-size: 16px;
     }
+
     .header-icons {
         align-self: flex-end;
     }
@@ -737,15 +816,19 @@ body {
     .hero-carousel {
         height: 60vh;
     }
+
     .hero-slide {
         padding-left: 20px;
     }
+
     .hero-content h1 {
         font-size: 32px;
     }
+
     .hero-content p {
         font-size: 16px;
     }
+
     .cta-button {
         padding: 10px 20px;
         font-size: 16px;
@@ -761,32 +844,40 @@ body {
     .featured-products {
         padding: 20px;
     }
+
     .featured-products h2 {
         font-size: 24px;
     }
+
     .product-card {
         flex: 0 0 45%;
         height: 280px;
     }
+
     .slide-btn {
         display: none; /* Masquer les boutons de slider sur mobile */
     }
+
     .products-container {
         gap: 10px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         padding-bottom: 15px;
     }
+
     .product-card {
         scroll-snap-align: start;
         min-width: 160px;
     }
+
     .product-info h3 {
         font-size: 14px;
     }
+
     .product-info p {
         font-size: 12px;
     }
+
     .view-product-btn {
         padding: 3px 6px;
         font-size: 11px;
@@ -796,31 +887,38 @@ body {
     .collection {
         padding: 15px;
     }
+
     .collection h2 {
         font-size: 28px;
     }
+
     .collection-grid {
         flex-direction: column;
         gap: 15px;
     }
+
     .collection-left,
     .collection-right {
         width: 100%;
     }
+
     .collection-item {
         width: 100% !important;
     }
+
     .collection-item img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover;
         margin: 0 !important;
     }
+
     .collection-item.large,
     .collection-item.medium,
     .collection-item.small {
         height: 200px !important;
     }
+
     .collection-text {
         font-size: 20px;
     }
@@ -829,16 +927,20 @@ body {
     .boutique-section {
         padding: 20px;
     }
+
     .boutique-section h2 {
         font-size: 28px;
     }
+
     .boutique-section p {
         font-size: 16px;
     }
+
     .boutique-button {
         padding: 10px 20px;
         font-size: 14px;
     }
+
     .map-container {
         height: 250px;
     }
@@ -847,39 +949,49 @@ body {
     .footer {
         padding: 20px;
     }
+
     .footer-top {
         flex-direction: column;
         gap: 20px;
     }
+
     .footer-column {
         text-align: center;
     }
+
     .footer-column h3 {
         font-size: 20px;
     }
+
     .social-icons {
         justify-content: center;
     }
+
     .icon {
         width: 28px;
         height: 28px;
     }
+
     .footer-bottom {
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
+
     .payment-logos {
         justify-content: center;
     }
+
     .pay-icon {
         width: 30px;
         height: 30px;
     }
+
     .legal-links {
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .legal-links a {
         font-size: 12px;
         margin: 0 5px;
@@ -894,43 +1006,54 @@ body {
         margin: 10px;
         padding: 15px;
     }
+
     #cart-items-container {
         max-height: 300px;
     }
+
     .cart-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
+
     .cart-item-img {
         width: 80px;
         height: 80px;
     }
+
     .item-details h4 {
         font-size: 16px;
     }
+
     .item-details p {
         font-size: 14px;
     }
+
     #cart-actions {
         flex-direction: column;
         gap: 10px;
     }
+
     #cart-actions button {
         width: 100%;
     }
+
     #delivery-form input,
     #payment-form input,
     #payment-form select {
         padding: 8px;
         font-size: 14px;
     }
+
     #payment-actions {
         flex-direction: column;
     }
+
     #payment-actions button {
         width: 100%;
     }
+
     .total-final {
         font-size: 16px;
     }

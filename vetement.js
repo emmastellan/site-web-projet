@@ -1,58 +1,50 @@
 // ====== DONNEES ======
 const articlesDataVetement = [
-    {nom:"Sweat", prix:"59.99", couleurs:["Noir"], img:"images/accessoires/homme/accessoire-1.png", img2:"images/accessoires/homme/accessoire-1-bis.png", img3:"images/accessoires/homme/accessoire-1-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Sweat", prix:"89.99", couleurs:["Noir"], img:"images/accessoires/homme/accessoire-2.png", img2:"images/accessoires/homme/accessoire-2-bis.png", img3:"images/accessoires/homme/accessoire-2-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Sweat", prix:"39.99", couleurs:["Bleu"], img:"images/accessoires/homme/accessoire-3.png", img2:"images/accessoires/homme/accessoire-3-bis.png", img3:"images/accessoires/homme/accessoire-3-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Bomber", prix:"29.99", couleurs:["Noir"], img:"images/accessoires/homme/accessoire-4.png", img2:"images/accessoires/homme/accessoire-4-bis.png", img3:"images/accessoires/homme/accessoire-4-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Sweat", prix:"59.99", couleurs:["Noir"], img:"images/nouveautes/homme/image-1.JPG", img2:"images/nouveautes/homme/image-1-bis.png", img3:"images/nouveautes/homme/image-1-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Sweat", prix:"89.99", couleurs:["Vert"], img:"images/nouveautes/homme/image-2.JPG", img2:"images/nouveautes/homme/image-2-bis.png", img3:"images/nouveautes/homme/image-2-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Sweat", prix:"39.99", couleurs:["Blanc"], img:"images/nouveautes/homme/image-3.JPG", img2:"images/nouveautes/homme/image-3-bis.png", img3:"images/nouveautes/homme/image-3-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Bomber", prix:"29.99", couleurs:["Rouge"], img:"images/nouveautes/homme/image-7.JPG", img2:"images/nouveautes/homme/image-7-bis.png", img3:"images/nouveautes/homme/image-7-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Bomber", prix:"19.99", couleurs:["Blanc"], img:"images/nouveautes/homme/image-9.JPG", img2:"images/nouveautes/homme/image-9-bis.png", img3:"images/nouveautes/homme/image-9-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Combinaison", prix:"64.99", couleurs:["Noir"], img:"images/nouveautes/homme/image-11.JPG", img2:"images/nouveautes/homme/image-11-bis.png", img3:"images/nouveautes/homme/image-11-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Combinaison", prix:"79.99", couleurs:["Bleu"], img:"images/nouveautes/homme/image-15.JPG", img2:"images/nouveautes/homme/image-15-bis.png", img3:"images/nouveautes/homme/image-15-ter.png", homme:true, femme:false, mixte:false},
-    {nom:"Compinaison", prix:"42.99", couleurs:["Noir"], img:"images/nouveautes/homme/image-21.JPG", img2:"images/nouveautes/homme/image-21-bis.png", img3:"images/nouveautes/homme/image-21-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Basket Noir", prix:"59.99", couleurs:["Noir"], img:"images/accessoires/homme/accessoire-1.png", img2:"images/accessoires/homme/accessoire-1-bis.png", img3:"images/accessoires/homme/accessoire-1-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Casquette Noir", prix:"89.99", couleurs:["Noir"], img:"images/accessoires/homme/accessoire-2.png", img2:"images/accessoires/homme/accessoire-2-bis.png", img3:"images/accessoires/homme/accessoire-2-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Gourde Bleu", prix:"39.99", couleurs:["Bleu"], img:"images/accessoires/homme/accessoire-3.png", img2:"images/accessoires/homme/accessoire-3-bis.png", img3:"images/accessoires/homme/accessoire-3-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Montre Noir", prix:"29.99", couleurs:["Noir"], img:"images/accessoires/homme/accessoire-4.png", img2:"images/accessoires/homme/accessoire-4-bis.png", img3:"images/accessoires/homme/accessoire-4-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Survètement Noir", prix:"59.99", couleurs:["Noir"], img:"images/nouveautes/homme/image-1.JPG", img2:"images/nouveautes/homme/image-1-bis.png", img3:"images/nouveautes/homme/image-1-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Survètement Vert", prix:"89.99", couleurs:["Vert"], img:"images/nouveautes/homme/image-2.JPG", img2:"images/nouveautes/homme/image-2-bis.png", img3:"images/nouveautes/homme/image-2-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Sweat Blanc", prix:"39.99", couleurs:["Blanc"], img:"images/nouveautes/homme/image-3.JPG", img2:"images/nouveautes/homme/image-3-bis.png", img3:"images/nouveautes/homme/image-3-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Sweat Rouge", prix:"29.99", couleurs:["Rouge"], img:"images/nouveautes/homme/image-7.JPG", img2:"images/nouveautes/homme/image-7-bis.png", img3:"images/nouveautes/homme/image-7-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Sweat Blanc", prix:"19.99", couleurs:["Blanc"], img:"images/nouveautes/homme/image-9.JPG", img2:"images/nouveautes/homme/image-9-bis.png", img3:"images/nouveautes/homme/image-9-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Sweat Noir", prix:"64.99", couleurs:["Noir"], img:"images/nouveautes/homme/image-11.JPG", img2:"images/nouveautes/homme/image-11-bis.png", img3:"images/nouveautes/homme/image-11-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Sweat Bleu", prix:"79.99", couleurs:["Bleu"], img:"images/nouveautes/homme/image-15.JPG", img2:"images/nouveautes/homme/image-15-bis.png", img3:"images/nouveautes/homme/image-15-ter.png", homme:true, femme:false, mixte:false},
+    {nom:"Pantalon Noir", prix:"42.99", couleurs:["Noir"], img:"images/nouveautes/homme/image-21.JPG", img2:"images/nouveautes/homme/image-21-bis.png", img3:"images/nouveautes/homme/image-21-ter.png", homme:true, femme:false, mixte:false},
     
+    {nom:"Basket Bleu", prix:"34.99", couleurs:["Bleu"], img:"images/accessoires/femme/accessoire-5.png", img2:"images/accessoires/femme/accessoire-5-bis.png", img3:"images/accessoires/femme/accessoire-5-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Basket Blanche", prix:"21.99", couleurs:["Blanc"], img:"images/accessoires/femme/accessoire-6.png", img2:"images/accessoires/femme/accessoire-6-bis.png", img3:"images/accessoires/femme/accessoire-6-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Casque Noir", prix:"69.99", couleurs:["Noir"], img:"images/accessoires/femme/accessoire-7.png", img2:"images/accessoires/femme/accessoire-7-bis.png", img3:"images/accessoires/femme/accessoire-7-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Porte-Feuille Noir", prix:"54.99", couleurs:["Noir"], img:"images/accessoires/femme/accessoire-8.png", img2:"images/accessoires/femme/accessoire-8-bis.png", img3:"images/accessoires/femme/accessoire-8-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Survètement Bleu", prix:"34.99", couleurs:["Bleu"], img:"images/nouveautes/femme/image-8.JPG", img2:"images/nouveautes/femme/image-8-bis.png", img3:"images/nouveautes/femme/image-8-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Sweat Rose", prix:"21.99", couleurs:["Rose"], img:"images/nouveautes/femme/image-10.JPG", img2:"images/nouveautes/homme/image-10-bis.png", img3:"images/nouveautes/femme/image-10-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Bomber Vert", prix:"69.99", couleurs:["Vert"], img:"images/nouveautes/femme/image-12.JPG", img2:"images/nouveautes/femme/image-12-bis.png", img3:"images/nouveautes/femme/image-12-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Survètement Rouge", prix:"54.99", couleurs:["Rouge"], img:"images/nouveautes/femme/image-13.JPG", img2:"images/nouveautes/femme/image-13-bis.png", img3:"images/nouveautes/femme/image-13-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Sac Blanc", prix:"44.99", couleurs:["Blanc"], img:"images/nouveautes/femme/image-16.JPG", img2:"images/nouveautes/femme/image-16-bis.png", img3:"images/nouveautes/femme/image-16-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Sweat Rouge", prix:"39.99", couleurs:["Rouge"], img:"images/nouveautes/femme/image-17.JPG", img2:"images/nouveautes/femme/image-17-bis.png", img3:"images/nouveautes/femme/image-17-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Survètement Blanc", prix:"62.99", couleurs:["Blanc"], img:"images/nouveautes/femme/image-18.JPG", img2:"images/nouveautes/femme/image-18-bis.png", img3:"images/nouveautes/femme/image-18-ter.png", homme:false, femme:true, mixte:false},
+    {nom:"Survètement Jaune", prix:"74.99", couleurs:["Jaune"], img:"images/nouveautes/femme/image-22.JPG", img2:"images/nouveautes/femme/image-22-bis.png", img3:"images/nouveautes/femme/image-22-ter.png", homme:false, femme:true, mixte:false},
 
-    {nom:"Sweat", prix:"34.99", couleurs:["Bleu"], img:"images/accessoires/femme/accessoire-5.png", img2:"images/accessoires/femme/accessoire-5-bis.png", img3:"images/accessoires/femme/accessoire-5-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"21.99", couleurs:["Blanc"], img:"images/accessoires/femme/accessoire-6.png", img2:"images/accessoires/femme/accessoire-6-bis.png", img3:"images/accessoires/femme/accessoire-6-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"69.99", couleurs:["Noir"], img:"images/accessoires/femme/accessoire-7.png", img2:"images/accessoires/femme/accessoire-7-bis.png", img3:"images/accessoires/femme/accessoire-7-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"54.99", couleurs:["Noir"], img:"images/accessoires/femme/accessoire-8.png", img2:"images/accessoires/femme/accessoire-8-bis.png", img3:"images/accessoires/femme/accessoire-8-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"34.99", couleurs:["Bleu"], img:"images/nouveautes/femme/image-8.JPG", img2:"images/nouveautes/femme/image-8-bis.png", img3:"images/nouveautes/femme/image-8-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"21.99", couleurs:["Rose"], img:"images/nouveautes/femme/image-10.JPG", img2:"images/nouveautes/homme/image-10-bis.png", img3:"images/nouveautes/femme/image-10-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"69.99", couleurs:["Vert"], img:"images/nouveautes/femme/image-12.JPG", img2:"images/nouveautes/femme/image-12-bis.png", img3:"images/nouveautes/femme/image-12-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"54.99", couleurs:["Rouge"], img:"images/nouveautes/femme/image-13.JPG", img2:"images/nouveautes/femme/image-13-bis.png", img3:"images/nouveautes/femme/image-13-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"44.99", couleurs:["Blanc"], img:"images/nouveautes/femme/image-16.JPG", img2:"images/nouveautes/femme/image-16-bis.png", img3:"images/nouveautes/femme/image-16-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"39.99", couleurs:["Rouge"], img:"images/nouveautes/femme/image-17.JPG", img2:"images/nouveautes/femme/image-17-bis.png", img3:"images/nouveautes/femme/image-17-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"62.99", couleurs:["Blanc"], img:"images/nouveautes/femme/image-18.JPG", img2:"images/nouveautes/femme/image-18-bis.png", img3:"images/nouveautes/femme/image-18-ter.png", homme:false, femme:true, mixte:false},
-    {nom:"Sweat", prix:"74.99", couleurs:["Jaune"], img:"images/nouveautes/femme/image-22.JPG", img2:"images/nouveautes/femme/image-22-bis.png", img3:"images/nouveautes/femme/image-22-ter.png", homme:false, femme:true, mixte:false},
-
-    {nom:"Sweat", prix:"36.99", couleurs:["Noir"], img:"images/nouveautes/mixte/image-5.JPG", img2:"images/nouveautes/mixte/image-5-bis.png", img3:"images/nouveautes/mixte/image-5-ter.png", homme:false, femme:false, mixte:true},
-    {nom:"Sweat", prix:"41.99", couleurs:["Noir"], img:"images/nouveautes/mixte/image-4.JPG", img2:"images/nouveautes/mixte/image-4-bis.png", img3:"images/nouveautes/mixte/image-4-ter.png", homme:false, femme:false, mixte:true},
-    {nom:"Sweat", prix:"23.99", couleurs:["Vert"], img:"images/nouveautes/mixte/image-6.JPG", img2:"images/nouveautes/mixte/image-6-bis.png", img3:"images/nouveautes/mixte/image-6-ter.png", homme:false, femme:false, mixte:true},
-    {nom:"Tee-shirt", prix:"66.99", couleurs:["Noir"], img:"images/nouveautes/mixte/image-14.JPG", img2:"images/nouveautes/mixte/image-14-bis.png", img3:"images/nouveautes/mixte/image-14-ter.png", homme:false, femme:false, mixte:true},
+    {nom:"Sac Noir", prix:"36.99", couleurs:["Noir"], img:"images/nouveautes/mixte/image-5.JPG", img2:"images/nouveautes/mixte/image-5-bis.png", img3:"images/nouveautes/mixte/image-5-ter.png", homme:false, femme:false, mixte:true},
+    {nom:"Gourde Noir", prix:"41.99", couleurs:["Noir"], img:"images/nouveautes/mixte/image-4.JPG", img2:"images/nouveautes/mixte/image-4-bis.png", img3:"images/nouveautes/mixte/image-4-ter.png", homme:false, femme:false, mixte:true},
+    {nom:"Sac à Dos Vert", prix:"23.99", couleurs:["Vert"], img:"images/nouveautes/mixte/image-6.JPG", img2:"images/nouveautes/mixte/image-6-bis.png", img3:"images/nouveautes/mixte/image-6-ter.png", homme:false, femme:false, mixte:true},
+    {nom:"Casquette Noir", prix:"66.99", couleurs:["Noir"], img:"images/nouveautes/mixte/image-14.JPG", img2:"images/nouveautes/mixte/image-14-bis.png", img3:"images/nouveautes/mixte/image-14-ter.png", homme:false, femme:false, mixte:true},
 ];
 
-
-
-
-
-
-
-
-
-// --- NOUVELLE LOGIQUE PANIER GLOBALE ---
+// --- LOGIQUE PANIER GLOBALE ---
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartModal = document.getElementById('cart-modal');
 const deliveryModal = document.getElementById('delivery-modal');
 const paymentModal = document.getElementById('payment-modal');
 const confirmationModal = document.getElementById('confirmation-modal'); // AJOUTÉ
 
+ // FONCTION POUR SAUVEGARDER LE PANIER ENTRE LES PAGES
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// NOUVELLE FONCTION POUR TOUT FERMER
+// FONCTION POUR TOUT FERMER
 function closeAllModals() {
     if (cartModal) cartModal.style.display = 'none';
     if (deliveryModal) deliveryModal.style.display = 'none';
@@ -63,6 +55,7 @@ function closeAllModals() {
     clearDeliveryFields();
 }
 
+// FONCTION POUR METTRE A JOUR LES ARTICLES DANS LE PANIER
 function updateCartCount() {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     // Supposons que l'icône du panier a un badge #cart-count
@@ -73,6 +66,7 @@ function updateCartCount() {
     }
 }
 
+//FONCTION POUR AJOUTER UN ARTICLE DANS LE PANIER
 function addToCart(article, couleur, taille = "M") {
     const existingItem = cart.find(item => item.id === article.id && item.couleur === couleur && item.taille === taille);
 
@@ -98,6 +92,7 @@ function addToCart(article, couleur, taille = "M") {
     modal.style.display = 'none';
 }
 
+// FONCTION POUR METTRE A JOUR LES CHAMPS DE PAIEMENT
 function updatePaymentFields(method) {
     const cbFields = document.getElementById('cb-fields');
     const paypalFields = document.getElementById('paypal-fields');
@@ -128,17 +123,6 @@ function updatePaymentFields(method) {
         }
     }
 }
-// ----------------------------------------
-
-
-
-
-
-
-
-
-
-
 
 // --- FONCTIONS AFFICHAGE PANIER ---
 function calculateTotal() {
@@ -146,6 +130,7 @@ function calculateTotal() {
     return total.toFixed(2);
 }
 
+// FONCTION POUR AFFICHER LE PANIER
 function displayCart() {
     const container = document.getElementById('cart-items-container');
     const cartTotalElement = document.getElementById('cart-total');
@@ -205,6 +190,7 @@ function removeItem(e) {
     displayCart();
 }
 
+// FONCTION POUR METTRE A JOUR LA QUANTITE DES ARTICLES DANS LE PANIER
 function updateQuantity(e) {
     const itemIdToUpdate = e.target.dataset.id;
     const newQuantity = parseInt(e.target.value);
@@ -223,6 +209,7 @@ function updateQuantity(e) {
     }
 }
 
+// FONCTION POUR VIDER LE PANIER
 function clearCart() {
     if (confirm("Êtes-vous sûr de vouloir vider complètement votre panier ?")) {
         cart = [];
@@ -234,6 +221,7 @@ function clearCart() {
     }
 }
 
+// FONCTION POUR CHANGER DE METHODE DE PAIEMENT
 function clearPaymentFields() {
     const cardNumber = document.getElementById('card-number');
     const expiryDate = document.getElementById('expiry-date');
@@ -245,15 +233,12 @@ function clearPaymentFields() {
     if (cvc) cvc.value = '';
     if (paypalEmail) paypalEmail.value = '';
     
-    // Optionnel : Réinitialiser la méthode de paiement sur CB par défaut (si souhaité)
+    // Réinitialiser la méthode de paiement sur CB par défaut
     const paymentMethod = document.getElementById('payment-method');
     if (paymentMethod) paymentMethod.value = 'cb';
-
-    // Effacer les messages d'erreurs éventuels si vous utilisez l'affichage personnalisé
-    // Si vous utilisez la méthode alert() ou les messages natifs, cette ligne est facultative :
-    // clearPaymentErrors(); 
 }
 
+// FONCTION POUR VIDER LES CHAMPS D'INFORMATION
 function clearDeliveryFields() {
     // --- CHAMPS DE LIVRAISON ---
     const deliveryName = document.getElementById('delivery-name');
@@ -270,7 +255,7 @@ function clearDeliveryFields() {
     if (deliveryCity) deliveryCity.value = '';
     if (deliveryZip) deliveryZip.value = '';
     
-    // Le champ pays (country) doit être inclus si vous l'utilisez
+    // Le champ pays (country) doit être inclus
     const deliveryCountry = document.getElementById('delivery-country');
     if (deliveryCountry) deliveryCountry.value = ''; 
 }
@@ -371,8 +356,6 @@ document.getElementById('payment-method')?.addEventListener('change', (e) => {
     updatePaymentFields(e.target.value);
 
     const method = e.target.value;
-    /*document.getElementById('cb-fields').style.display = (method === 'cb') ? 'block' : 'none';
-    document.getElementById('paypal-fields').style.display = (method === 'paypal') ? 'block' : 'none';*/
     const cbFields = document.getElementById('cb-fields');
     const paypalFields = document.getElementById('paypal-fields');
 
@@ -412,7 +395,7 @@ document.getElementById('payment-form')?.addEventListener('submit', (e) => {
     // 1. Récupérer le montant final AVANT de vider le panier
     const paymentForm = document.getElementById('payment-form');
     
-    // Cette étape est maintenant optionnelle, mais s'assure que la validation HTML s'est bien exécutée
+    // Cette étape s'assure que la validation HTML s'est bien exécutée
     // pour tous les champs requis et visibles.
     if (!paymentForm.checkValidity()) {
         // Le navigateur affiche déjà le message d'erreur natif.
@@ -480,21 +463,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// ----------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ====== VARIABLES DOM ======
 const articlesGrid = document.querySelector('.articles-grid');
@@ -523,7 +491,6 @@ function displayArticles(page = 1) {
     if (currentFilter === 'homme') filteredArticles = filteredArticles.filter(a => a.homme);
     if (currentFilter === 'femme') filteredArticles = filteredArticles.filter(a => a.femme);
     if (currentFilter === 'mixte') filteredArticles = filteredArticles.filter(a => a.mixte);
-
 
     // TRI
     if (currentSort === 'price-asc') {
@@ -554,7 +521,7 @@ function displayArticles(page = 1) {
                     </select>
                     <p>${article.prix}€</p>
                 </div>
-                <div class="right-info"><span class="heart">♡</span></div>
+                <div class="right-info"><span class="heart"></span></div>
             </div>
              <button class="view-button">Voir l'article</button>
         `;
@@ -596,7 +563,7 @@ function setupModalThumbnails(article) {
     // Supprime anciennes miniatures sauf le bouton
     Array.from(thumbContainer.querySelectorAll("img")).forEach(img => img.remove());
 
-    // On crée jusqu'à 3 miniatures : img, img2, img3 si elles existent
+    // On crée jusqu'à 3 miniatures : img, img2, img3 
     const thumbImages = [article.img, article.img2, article.img3].filter(Boolean).slice(0, 3);
 
     thumbImages.forEach(src => {

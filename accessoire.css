@@ -267,27 +267,16 @@ body {
     background: #FFC107;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ======================================================= */
 /* ====== Styles pour le Panier et les Modales de Commande ====== */
 /* ======================================================= */
 
 /* --- 1. Badge du Panier dans le Header --- */
-/* Assurez-vous que l'icône du panier a 'position: relative;' pour que le badge se positionne correctement */
 #cart-count {
     position: absolute;
-    top: -5px; /* Ajustez selon le design de votre header */
-    right: -10px; /* Ajustez selon le design de votre header */
-    background-color: #ff4500; /* Orange/Rouge Vif */
+    top: -5px; 
+    right: -10px; 
+    background-color: #ff4500; 
     color: white;
     border-radius: 50%;
     padding: 2px 6px;
@@ -299,7 +288,7 @@ body {
     display: flex; 
     align-items: center;
     justify-content: center;
-    z-index: 99; /* Assure que le badge est au-dessus de l'icône */
+    z-index: 99; 
 }
 
 /* --- 2. Styles Généraux des Modales --- */
@@ -313,14 +302,14 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.7); /* Fond sombre semi-transparent */
-    justify-content: center; /* Centrage horizontal via JS (display: flex) */
-    align-items: center; /* Centrage vertical via JS (display: flex) */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .modal-content {
     background: #fff;
     border-radius: 10px;
-    width: 1200px;   /* Ici, vous pouvez ajuster votre pourcentage */
+    width: 1200px;   
     min-width: 1200px;
     max-width: 1200px;
     height: 600px;  
@@ -331,8 +320,6 @@ body {
     position: relative;
     padding: 20px;
     box-sizing: border-box;
-    
-    /* SOLUTION : Force le centrage du bloc lui-même */
     margin: auto; 
 }
 
@@ -452,7 +439,6 @@ body {
 }
 
 /* --- 4. Styles des Formulaires de Commande --- */
-
 #delivery-form input,
 #payment-form input,
 #payment-form select {
@@ -511,8 +497,6 @@ body {
     background-color: #e0e0e0;
 }
 
-
-
 #payment-actions {
     display: flex;
     justify-content: space-between; /* Aligne les boutons aux extrémités */
@@ -530,11 +514,6 @@ body {
     width: 100%;
     margin-top: 20px;
 }
-
-
-
-
-
 
 /* ======================================================= */
 /* ====== RESPONSIVE DESIGN POUR SMARTPHONES ET PETITS ÉCRANS ====== */

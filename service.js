@@ -5,6 +5,7 @@ const deliveryModal = document.getElementById('delivery-modal');
 const paymentModal = document.getElementById('payment-modal');
 const confirmationModal = document.getElementById('confirmation-modal'); // AJOUTÉ
 
+ // FONCTION POUR SAUVEGARDER LE PANIER ENTRE LES PAGES
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -20,6 +21,7 @@ function closeAllModals() {
     clearDeliveryFields();
 }
 
+// FONCTION POUR METTRE A JOUR LES ARTICLES DANS LE PANIER
 function updateCartCount() {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     // Supposons que l'icône du panier a un badge #cart-count
@@ -30,6 +32,7 @@ function updateCartCount() {
     }
 }
 
+//FONCTION POUR AJOUTER UN ARTICLE DANS LE PANIER
 function addToCart(article, couleur, taille = "M") {
     const existingItem = cart.find(item => item.id === article.id && item.couleur === couleur && item.taille === taille);
 
@@ -55,6 +58,7 @@ function addToCart(article, couleur, taille = "M") {
     modal.style.display = 'none';
 }
 
+// FONCTION POUR METTRE A JOUR LES CHAMPS DE PAIEMENT
 function updatePaymentFields(method) {
     const cbFields = document.getElementById('cb-fields');
     const paypalFields = document.getElementById('paypal-fields');
@@ -85,17 +89,6 @@ function updatePaymentFields(method) {
         }
     }
 }
-// ----------------------------------------
-
-
-
-
-
-
-
-
-
-
 
 // --- FONCTIONS AFFICHAGE PANIER ---
 function calculateTotal() {
@@ -103,6 +96,7 @@ function calculateTotal() {
     return total.toFixed(2);
 }
 
+// FONCTION POUR AFFICHER LE PANIER
 function displayCart() {
     const container = document.getElementById('cart-items-container');
     const cartTotalElement = document.getElementById('cart-total');
@@ -162,6 +156,7 @@ function removeItem(e) {
     displayCart();
 }
 
+// FONCTION POUR METTRE A JOUR LA QUANTITE DES ARTICLES DANS LE PANIER
 function updateQuantity(e) {
     const itemIdToUpdate = e.target.dataset.id;
     const newQuantity = parseInt(e.target.value);
@@ -180,6 +175,7 @@ function updateQuantity(e) {
     }
 }
 
+// FONCTION POUR VIDER LE PANIER
 function clearCart() {
     if (confirm("Êtes-vous sûr de vouloir vider complètement votre panier ?")) {
         cart = [];
@@ -191,6 +187,7 @@ function clearCart() {
     }
 }
 
+// FONCTION POUR CHANGER DE METHODE DE PAIEMENT
 function clearPaymentFields() {
     const cardNumber = document.getElementById('card-number');
     const expiryDate = document.getElementById('expiry-date');
@@ -202,15 +199,12 @@ function clearPaymentFields() {
     if (cvc) cvc.value = '';
     if (paypalEmail) paypalEmail.value = '';
     
-    // Optionnel : Réinitialiser la méthode de paiement sur CB par défaut (si souhaité)
+    // Réinitialiser la méthode de paiement sur CB par défaut 
     const paymentMethod = document.getElementById('payment-method');
     if (paymentMethod) paymentMethod.value = 'cb';
-
-    // Effacer les messages d'erreurs éventuels si vous utilisez l'affichage personnalisé
-    // Si vous utilisez la méthode alert() ou les messages natifs, cette ligne est facultative :
-    // clearPaymentErrors(); 
 }
 
+// FONCTION POUR VIDER LES CHAMPS D'INFORMATION
 function clearDeliveryFields() {
     // --- CHAMPS DE LIVRAISON ---
     const deliveryName = document.getElementById('delivery-name');
@@ -227,7 +221,7 @@ function clearDeliveryFields() {
     if (deliveryCity) deliveryCity.value = '';
     if (deliveryZip) deliveryZip.value = '';
     
-    // Le champ pays (country) doit être inclus si vous l'utilisez
+    // Le champ pays (country) doit être inclus 
     const deliveryCountry = document.getElementById('delivery-country');
     if (deliveryCountry) deliveryCountry.value = ''; 
 }
@@ -328,8 +322,6 @@ document.getElementById('payment-method')?.addEventListener('change', (e) => {
     updatePaymentFields(e.target.value);
 
     const method = e.target.value;
-    /*document.getElementById('cb-fields').style.display = (method === 'cb') ? 'block' : 'none';
-    document.getElementById('paypal-fields').style.display = (method === 'paypal') ? 'block' : 'none';*/
     const cbFields = document.getElementById('cb-fields');
     const paypalFields = document.getElementById('paypal-fields');
 
@@ -369,7 +361,7 @@ document.getElementById('payment-form')?.addEventListener('submit', (e) => {
     // 1. Récupérer le montant final AVANT de vider le panier
     const paymentForm = document.getElementById('payment-form');
     
-    // Cette étape est maintenant optionnelle, mais s'assure que la validation HTML s'est bien exécutée
+    // Cette étape s'assure que la validation HTML s'est bien exécutée
     // pour tous les champs requis et visibles.
     if (!paymentForm.checkValidity()) {
         // Le navigateur affiche déjà le message d'erreur natif.
@@ -437,17 +429,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// ----------------------------------------
-
-
-
-
-
-
-
 
 /* ============================================================
-   LOGIQUE DE SERVICE (PRÉCÉDENTE)
+   LOGIQUE DE SERVICE 
    ============================================================ */
 
 const carriers = document.querySelectorAll(".carrier-card");
@@ -456,15 +440,12 @@ const returnCarriers = document.querySelectorAll("#return-carrier-data .carrier-
 const returnCarrierList = document.getElementById("return-carrier-list");
 const faqDomains = document.querySelectorAll(".faq-domains li");
 const faqQuestions = document.querySelectorAll(".faq-question");
-
-// Vous aviez des sélecteurs manquants que j'ajoute ici pour éviter les erreurs futures
 const faqCategories = document.querySelectorAll('.faq-categories li'); 
 const faqContents = document.querySelectorAll('.faq-content'); 
 
 
-// Texte riche pour chaque transporteur (unchanged)
+// Texte riche pour chaque transporteur 
 const returnData = {
-    // ... (Code returnData inchangé) ...
     "chrono-retour": `
         <p>Pour retourner un article avec Chronopost, utilisez votre <strong>numéro de commande</strong> pour générer l'étiquette de retour.</p>
         <p>Rendez-vous sur le site officiel : <a href="https://www.chronopost.fr/fr/retour-colis" target="_blank">Chronopost Retours</a></p>
@@ -505,11 +486,10 @@ carrierList?.addEventListener("change", () => {
 });
 
 /* ============================================================
-   BASE DE DONNÉES — TARIFS & DÉLAIS (unchanged)
+   BASE DE DONNÉES — TARIFS & DÉLAIS 
    ============================================================ */
 
 const shippingData = {
-    // ... (Code shippingData inchangé) ...
     chrono: {
         fr: { home: 6.90, relay: 4.90, delay: "24h" },
         be: { home: 11.90, relay: 7.90, delay: "48h" },
@@ -538,7 +518,7 @@ const shippingData = {
 };
 
 /* ============================================================
-   MISE À JOUR AUTOMATIQUE SELON LE PAYS (unchanged)
+   MISE À JOUR AUTOMATIQUE SELON LE PAYS 
    ============================================================ */
 
 document.querySelectorAll(".country-select").forEach(select => {
@@ -558,7 +538,7 @@ document.querySelectorAll(".country-select").forEach(select => {
     });
 });
 
-/// OUVERTURE / FERMETURE DES BLOCS RETOUR (unchanged)
+/// OUVERTURE / FERMETURE DES BLOCS RETOUR 
 returnCarrierList?.addEventListener("change", () => {
     const choice = returnCarrierList.value;
 
@@ -571,14 +551,14 @@ returnCarrierList?.addEventListener("change", () => {
     }
 });
 
-// Masquer toutes les questions au départ (unchanged)
+// Masquer toutes les questions au départ 
 faqQuestions.forEach(q => {
     q.style.display = "none";                  
     const answer = q.querySelector(".question-answer");
     if (answer) answer.style.display = "none"; 
 });
 
-// Au clic sur un domaine (unchanged)
+// Au clic sur un domaine 
 faqDomains.forEach(domain => {
     domain.addEventListener("click", () => {
         // Active le domaine sélectionné
@@ -600,7 +580,7 @@ faqDomains.forEach(domain => {
     });
 });
 
-// Toggle réponses au clic (unchanged)
+// Toggle réponses au clic 
 faqQuestions.forEach(q => {
     q.addEventListener("click", () => {
         const answer = q.querySelector(".question-answer");
@@ -633,14 +613,6 @@ faqCategories?.forEach(cat => {
         });
     });
 });
-
-
-
-
-
-
-
-
 
 // ====== VARIABLES DOM ======
 const articlesGrid = document.querySelector('.articles-grid');
@@ -750,11 +722,7 @@ function openModal(article) {
     setupModalThumbnails(article);
 
     const infoContainer = document.getElementById('modal-info');
-    /*infoContainer.innerHTML = `
-        <h3>${article.nom}</h3>
-        <p>Prix : ${article.prix}€</p>
-        <p>Couleurs : ${article.couleurs.join(', ')}</p>
-    `;*/
+
     infoContainer.innerHTML = `
         <h3>${article.nom}</h3>
         <p>Prix : ${article.prix}€</p>
@@ -787,6 +755,7 @@ sortButton.addEventListener("click", e => {
     sortList.style.display = (sortList.style.display === "block") ? "none" : "block";
     filterList.style.display = "none";
 });
+
 sortList.querySelectorAll('li').forEach(li => {
     li.addEventListener('click', () => {
         currentSort = li.dataset.value;
@@ -795,11 +764,13 @@ sortList.querySelectorAll('li').forEach(li => {
         displayArticles(currentPage);
     });
 });
+
 filterButton.addEventListener("click", e => {
     e.stopPropagation();
     filterList.style.display = (filterList.style.display === "block") ? "none" : "block";
     sortList.style.display = "none";
 });
+
 filterList.querySelectorAll('li').forEach(li => {
     li.addEventListener('click', () => {
         currentFilter = li.dataset.filter;
@@ -808,6 +779,7 @@ filterList.querySelectorAll('li').forEach(li => {
         displayArticles(currentPage);
     });
 });
+
 document.addEventListener("click", () => {
     sortList.style.display = "none";
     filterList.style.display = "none";
@@ -817,6 +789,7 @@ modalClose.addEventListener('click', e => {
     e.stopPropagation();
     modal.style.display = 'none';
 });
+
 modal.addEventListener('click', e => {
     if (!e.target.closest('.modal-content')) modal.style.display = 'none';
 });

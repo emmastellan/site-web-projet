@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nouveautés - Gridwear</title>
+    <meta name="description" content="Découvrez les nouveautés Gridwear : vetements, accessoires et bien plus encore. Faites-vous plaisir avec les nouveauté et les exclusivités.">
+    <meta name="keywords" content="Gridwear, accessoires, nouveautés, vetements, mode, boutique en ligne, vêtements futuristes, panier, paiement sécurisé, automobile, sport">
+    <meta name="author" content="Emma Stella Ntsame Ayoo Obame, Marc, Pierre">
+    <meta property="og:title" content="Gridwear">
+    <meta property="og:description" content="Parcourez les derniers accessoires et vetements Gridwear et explorez nos produits.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/accueil/logo/gridwear.jpg">
+    <meta property="og:url" content="vetement.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vetements - Gridwear">
+    <meta name="twitter:description" content="Découvrez notre collection de vetements et d'acessoires uniques.">
+    <meta name="twitter:image" content="images/accueil/logo/gridwear.jpg">
+    <title>Vetements - Gridwear</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="vetement.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
@@ -70,7 +82,7 @@
             <div class="modal-thumbnails" id="modal-thumbnails">
                 <button id="restore-image">Restaurer</button>
             </div>
-            <img id="modal-img" src="" alt="Article">
+            <img id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Article">
             
             <button id="add-to-cart">Ajouter au panier</button>
 
@@ -80,6 +92,110 @@
             </div>
         </div>
     </div>
+
+    <!-- GESTION DU PANIER -->
+    <section>
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-cart-modal">&times;</span>
+                <h2>🛍️ Votre Panier</h2>
+                    
+                <div id="cart-items-container">
+                    </div>
+
+                <div id="cart-summary">
+                    <p>Total : <span id="cart-total">0.00€</span></p>
+                </div>
+
+                <div id="cart-actions">
+                    <button id="clear-cart-btn" class="button secondary-button">Vider le panier</button>
+                    <button id="checkout-btn" class="button primary-button" disabled>Commander</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="delivery-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-delivery-modal">&times;</span>
+                <h2>🚚 Informations de Livraison</h2>
+                <form id="delivery-form">
+                    <input type="text" id="delivery-name" placeholder="Nom et Prénom" 
+                        pattern="[A-Za-zÀ-ÿ\s]+" title="Seules les lettres et les espaces sont autorisés" required>
+                        
+                    <input type="email" id="delivery-email" placeholder="Email" 
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
+                        title="Doit être de la forme exemple@domaine.ext (ext doit avoir au moins 2 lettres)" required>
+                        
+                    <input type="tel" id="delivery-phone" placeholder="Téléphone (ex: 0612345678)" 
+                        pattern="[0-9]{8,15}" title="Uniquement des chiffres (8 à 15)" required>
+                        
+                    <input type="text" id="delivery-address" placeholder="Adresse complète" required>
+                        
+                    <input type="text" id="delivery-city" placeholder="Ville" 
+                        pattern="[A-Za-zÀ-ÿ\s]+" title="Seules les lettres et les espaces sont autorisés" required>
+                        
+                    <input type="text" id="delivery-zip" placeholder="Code Postal" 
+                        pattern="[0-9]{4,6}" title="Uniquement des chiffres (4 à 6)" required>
+
+                    <input type="text" id="delivery-country" placeholder="Pays" 
+                        pattern="[A-Za-zÀ-ÿ\s]+" title="Seules les lettres et les espaces sont autorisés" required>
+
+                    <button type="submit" class="button primary-button">Suivant</button>
+                    </form>
+            </div>
+        </div>
+
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-payment-modal">&times;</span>
+                <h2>💳 Paiement</h2>
+                <form id="payment-form">
+                    <label for="payment-method">Choisir la méthode de paiement :</label>
+                    <select id="payment-method">
+                        <option value="cb">Carte Bancaire</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+
+                    <div id="cb-fields" class="payment-fields">
+                        <input type="text" id="card-number" placeholder="Numéro de carte (16 chiffres)" 
+                            pattern="\d{16}" maxlength="16" title="Doit contenir exactement 16 chiffres" required>
+                                
+                        <input type="text" id="expiry-date" placeholder="MM/AA" 
+                            pattern="\d{2}\/\d{2}" maxlength="5" title="Doit être au format MM/AA" required>
+                                
+                        <input type="text" id="cvc" placeholder="CVC (3 chiffres)" 
+                            pattern="\d{3}" maxlength="3" title="Doit contenir exactement 3 chiffres" required>
+                    </div>
+
+                    <div id="paypal-fields" class="payment-fields" style="display:none;">
+                        <p>Vous serez redirigé vers PayPal pour finaliser votre achat.</p>
+                        <input type="text" id="paypal-email" placeholder="Email PayPal" 
+                            pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" 
+                            title="Veuillez entrer une adresse e-mail valide (ex: utilisateur@domaine.com)."
+                            required>
+                    </div>
+                        
+                    <p class="total-final">Total à payer : <strong id="final-total">0.00€</strong></p>
+                        
+                    <div id="payment-actions">
+                        <button type="button" id="back-to-delivery-btn" class="button secondary-button">Retour</button>
+                        <button type="submit" class="button primary-button">Valider la commande</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-confirmation-modal">&times;</span>
+                <h2>✅ Commande Validée !</h2>
+                <p>Votre commande a été passée avec succès.</p>
+                <p>Un email de confirmation vous sera envoyé sous peu.</p>
+                <div class="total-final">Total payé : <strong id="final-paid-amount">0.00€</strong></div>
+                <button id="continue-shopping-btn" class="button primary-button" style="width: 100%; margin-top: 20px;">Continuer mes achats</button>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
 
@@ -180,135 +296,11 @@
                 <a href="regle.html#politique-de-confidentialite">Politique de confidentialité</a>
                 <a href="regle.html#mentions-legales">Mentions légales</a>
                 <a href="regle.html#preferences-cookies">Préférences cookies</a>
+                <a href="regle.html#glossaire">Glossaire</a>
+                <a href="regle.html#sitographie">Sitographie</a>
             </div>
         </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-cart-modal">&times;</span>
-            <h2>🛍️ Votre Panier</h2>
-            
-            <div id="cart-items-container">
-                </div>
-
-            <div id="cart-summary">
-                <p>Total : <span id="cart-total">0.00€</span></p>
-            </div>
-
-            <div id="cart-actions">
-                <button id="clear-cart-btn" class="button secondary-button">Vider le panier</button>
-                <button id="checkout-btn" class="button primary-button" disabled>Commander</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="delivery-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-delivery-modal">&times;</span>
-            <h2>🚚 Informations de Livraison</h2>
-            <form id="delivery-form">
-                <input type="text" id="delivery-name" placeholder="Nom et Prénom" 
-                    pattern="[A-Za-zÀ-ÿ\s]+" title="Seules les lettres et les espaces sont autorisés" required>
-                
-                <input type="email" id="delivery-email" placeholder="Email" 
-                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
-                    title="Doit être de la forme exemple@domaine.ext (ext doit avoir au moins 2 lettres)" required>
-                
-                <input type="tel" id="delivery-phone" placeholder="Téléphone (ex: 0612345678)" 
-                    pattern="[0-9]{8,15}" title="Uniquement des chiffres (8 à 15)" required>
-                
-                <input type="text" id="delivery-address" placeholder="Adresse complète" required>
-                
-                <input type="text" id="delivery-city" placeholder="Ville" 
-                    pattern="[A-Za-zÀ-ÿ\s]+" title="Seules les lettres et les espaces sont autorisés" required>
-                
-                <input type="text" id="delivery-zip" placeholder="Code Postal" 
-                    pattern="[0-9]{4,6}" title="Uniquement des chiffres (4 à 6)" required>
-
-                <input type="text" id="delivery-country" placeholder="Pays" 
-                    pattern="[A-Za-zÀ-ÿ\s]+" title="Seules les lettres et les espaces sont autorisés" required>
-
-                <button type="submit" class="button primary-button">Suivant</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="payment-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-payment-modal">&times;</span>
-            <h2>💳 Paiement</h2>
-            <form id="payment-form">
-                <label for="payment-method">Choisir la méthode de paiement :</label>
-                <select id="payment-method">
-                    <option value="cb">Carte Bancaire</option>
-                    <option value="paypal">PayPal</option>
-                </select>
-
-                <div id="cb-fields" class="payment-fields">
-                    <input type="text" id="card-number" placeholder="Numéro de carte (16 chiffres)" 
-                        pattern="\d{16}" maxlength="16" title="Doit contenir exactement 16 chiffres" required>
-                        
-                    <input type="text" id="expiry-date" placeholder="MM/AA" 
-                        pattern="\d{2}\/\d{2}" maxlength="5" title="Doit être au format MM/AA" required>
-                        
-                    <input type="text" id="cvc" placeholder="CVC (3 chiffres)" 
-                        pattern="\d{3}" maxlength="3" title="Doit contenir exactement 3 chiffres" required>
-                </div>
-
-                <div id="paypal-fields" class="payment-fields" style="display:none;">
-                    <p>Vous serez redirigé vers PayPal pour finaliser votre achat.</p>
-                    <input type="text" id="paypal-email" placeholder="Email PayPal" 
-                        pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" 
-                        title="Veuillez entrer une adresse e-mail valide (ex: utilisateur@domaine.com)."
-                        required>
-                </div>
-                
-                <p class="total-final">Total à payer : <strong id="final-total">0.00€</strong></p>
-                
-                <div id="payment-actions">
-                    <button type="button" id="back-to-delivery-btn" class="button secondary-button">Retour</button>
-                    <button type="submit" class="button primary-button">Valider la commande</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="confirmation-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-confirmation-modal">&times;</span>
-            <h2>✅ Commande Validée !</h2>
-            <p>Votre commande a été passée avec succès.</p>
-            <p>Un email de confirmation vous sera envoyé sous peu.</p>
-            <div class="total-final">Total payé : <strong id="final-paid-amount">0.00€</strong></div>
-            <button id="continue-shopping-btn" class="button primary-button" style="width: 100%; margin-top: 20px;">Continuer mes achats</button>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="vetement.js"></script>
 </body>
